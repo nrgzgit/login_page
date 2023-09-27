@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Note-Taking App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="background">
+    <div class="gradient-one"></div>
+    <div class="gradient-two"></div>
+    <div class="gradient-three"></div>
+</div>
+<main>
+    <div class="page active" id="sign-in">
+        <h3>Sign in</h3>
+        <form>
+            <div class="form-group align-center">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+            </div>
+            <div class="text-center"><button type="submit" class="btn btn-primary">Login</button></div>
+            <p>Don't have an account? <a href="#" onclick="showPage('sign-up')">Sign up</a></p>
+        </form>
+    </div>
+
+    <div class="page" id="sign-up">
+        <h3>Sign up</h3>
+        <form>
+            <div class="form-group align-center">
+                <label for="exampleInputText">Full Name</label>
+                <input type="text" class="form-control" id="exampleInputText" aria-describedby="emailHelp" placeholder="Name">
+            </div>
+            <div class="form-group align-center">
+                <label for="exampleInputEmail2">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword2">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input">
+                <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+            </div>
+            <div class="text-center"><button type="submit" class="btn btn-primary">Create</button></div>
+            <p>Already have an account? <a href="#" onclick="showPage('sign-in')">Sign in</a></p>
+        </form>
+    </div>
+</main>
+
+<script src="index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
