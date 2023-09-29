@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css?family=Gruppo");
+.background div, .background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Gruppo", cursive;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background div {
+  will-change: opacity;
+}
+.background .gradient-one {
+  background: linear-gradient(180deg, #fae2bc 60%, #9bdaff 100%);
+}
+.background .gradient-two {
+  background: linear-gradient(300deg, #f9c3f5 60%, #9bdaff 100%);
+  animation: fade-one 6s linear infinite;
+}
+.background .gradient-three {
+  background: linear-gradient(10deg, #bab2fc 60%, #9bdaff 100%);
+  animation: fade-two 6s linear infinite;
+}
+
+@keyframes fade-one {
+  0% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fade-two {
+  0% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 0;
+  }
+  66% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#sign-in {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.4);
+  color: rgb(0, 0, 0);
+  max-width: 25rem;
+  height: auto;
+  padding: 1rem 2rem;
+  line-height: 2rem;
+  border-top-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+#sign-in h3 {
+  text-align: center;
+}
+#sign-in p {
+  font-size: 0.8rem;
+  margin-bottom: 0;
+}
+#sign-in p a {
+  text-decoration: none;
+}
+#sign-in p a:hover {
+  color: rgb(0, 0, 0);
+}
+#sign-in input {
+  background: transparent;
+  backdrop-filter: blur(10px);
+  border-radius: 0.4rem;
+  background: linear-gradient(10deg, rgba(255, 255, 255, 0.1) 60%, rgba(255, 255, 255, 0.1) 100%);
+  border: none;
+  box-shadow: none;
+}
+#sign-in input:hover {
+  box-shadow: inset 0 0 20px rgb(255, 255, 255);
+}
+#sign-in input:active {
+  background: white;
+  color: rgb(0, 0, 0);
+}
+#sign-in input:focus {
+  background: white;
+  box-shadow: none;
+}
+#sign-in .btn {
+  background: transparent;
+  backdrop-filter: blur(10px);
+  border-radius: 0.4rem;
+  background: linear-gradient(10deg, rgba(255, 255, 255, 0.1) 60%, rgba(255, 255, 255, 0.1) 100%);
+  border: none;
+  box-shadow: none;
+  color: black;
+  margin: 0.9rem;
+  padding: 0.3rem 2rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+#sign-in .btn:hover {
+  box-shadow: inset 0 0 20px rgb(255, 255, 255);
+}
+#sign-in .btn:active {
+  background: white;
+  color: rgb(0, 0, 0);
+}
+#sign-in .btn:focus {
+  background: white;
+  box-shadow: none;
+}
+#sign-in .form-check {
+  display: flex;
+  align-items: center;
+}
+#sign-in .form-check .form-check-input {
+  margin-right: 0.5rem;
+}
+
+#sign-up {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.4);
+  color: rgb(0, 0, 0);
+  max-width: 25rem;
+  height: auto;
+  padding: 1rem 2rem;
+  line-height: 2rem;
+  border-top-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+#sign-up h3 {
+  text-align: center;
+}
+#sign-up p {
+  font-size: 0.8rem;
+  margin-bottom: 0;
+}
+#sign-up p a {
+  text-decoration: none;
+}
+#sign-up p a:hover {
+  color: rgb(0, 0, 0);
+}
+#sign-up input {
+  background: transparent;
+  backdrop-filter: blur(10px);
+  border-radius: 0.4rem;
+  background: linear-gradient(10deg, rgba(255, 255, 255, 0.1) 60%, rgba(255, 255, 255, 0.1) 100%);
+  border: none;
+  box-shadow: none;
+}
+#sign-up input:hover {
+  box-shadow: inset 0 0 20px rgb(255, 255, 255);
+}
+#sign-up input:active {
+  background: white;
+  color: rgb(0, 0, 0);
+}
+#sign-up input:focus {
+  background: white;
+  box-shadow: none;
+}
+#sign-up .btn {
+  background: transparent;
+  backdrop-filter: blur(10px);
+  border-radius: 0.4rem;
+  background: linear-gradient(10deg, rgba(255, 255, 255, 0.1) 60%, rgba(255, 255, 255, 0.1) 100%);
+  border: none;
+  box-shadow: none;
+  color: black;
+  margin: 0.9rem;
+  padding: 0.3rem 2rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+#sign-up .btn:hover {
+  box-shadow: inset 0 0 20px rgb(255, 255, 255);
+}
+#sign-up .btn:active {
+  background: white;
+  color: rgb(0, 0, 0);
+}
+#sign-up .btn:focus {
+  background: white;
+  box-shadow: none;
+}
+#sign-up .form-check {
+  display: flex;
+  align-items: center;
+}
+#sign-up .form-check .form-check-input {
+  margin-right: 0.5rem;
+}
+
+.page {
+  display: none;
+}
+.page.active {
+  display: block;
+}
+
+/*# sourceMappingURL=index.css.map */

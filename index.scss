@@ -133,10 +133,6 @@ body {
     opacity: 1; }
 }
 
-
-
-//Sign In / Sign Up Styles
-
 #sign-in {
   @include forms;
 }
@@ -151,4 +147,3 @@ body {
     display: block;
   }
 }
-
