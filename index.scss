@@ -1,149 +1,165 @@
 @import url('https://fonts.googleapis.com/css?family=Gruppo');
 
-//Main Colors
 $font-primary: 'Gruppo', cursive;
+
 $text-light-mode: rgba(0, 0, 0, 1);
 $text-dark-mode: rgba(255, 255, 255, 1);
-$glass-container: rgba(255,255,255,0.4);
+$placeholder: rgba(143, 142, 155, 1);
+
+$light-container: rgba(255,255,255,0.4);
 $dark-container: rgb(255 255 255 / 20%);
 
-@mixin inputs {
-  background: transparent;
+$border-dark-mode: 1px solid $text-dark-mode;
+$border-light-mode: 1px solid $text-light-mode;
+
+$box-shadow-inset: inset 0 0 1.25rem rgb(255, 255, 255);
+
+@mixin forms {
+  background: $light-container;
   backdrop-filter: blur(10px);
-  border-radius: 0.4rem;
-  background: linear-gradient(10deg, rgba(#fff, 0.1) 60%, rgba(#fff, 0.1) 100%);
-  border: none;
-  box-shadow: none;
-  &:hover {
-    box-shadow: inset 0 0 20px rgb(255, 255, 255);
-  }
-  &:active {
+  color: $text-light-mode;
+  max-width: 25rem; height: auto;
+  border-top-left-radius: 1rem; border-bottom-right-radius: 1rem;
+  padding: 1rem 2rem;
+  line-height: 2rem;
+}
+
+@mixin inputs {
+  background: linear-gradient(20deg, rgba(#fff, 0.1) 60%, rgba(#fff, 0.1) 100%);
+  backdrop-filter: blur(10px);
+  border: none; border-radius: 0.3rem;
+  box-shadow: $box-shadow-inset;
+  &:hover, &:active, &:focus {
     background: white;
     color: $text-light-mode;
-  }
-  &:focus {
-    background: white;
     box-shadow: none;
   }
 }
 
-@mixin forms {
-  backdrop-filter: blur(10px);
-  background: $glass-container;
-  color: $text-light-mode;
-  max-width: 25rem;
-  height: auto;
-  padding: 1rem 2rem;
-  line-height: 2rem;
-  border-top-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-  & h3 {
-    text-align: center;
-  }
-  & p {
-    font-size: 0.8rem;
-    margin-bottom: 0;
-    & a {
-      text-decoration: none;
-      &:hover {
-        color: $text-light-mode;
-      }
+@mixin checkboxes {
+  @include inputs;
+  width: 1.2rem; height: 1.2rem;
+  margin: 0 0.5rem;
+  & span {
+    position:relative;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0.5rem; height: 1.125rem;
+      left: 0.2rem; top: 0.6rem;
+      border-right: 2px solid $placeholder; border-top: 1px solid $placeholder;
+      transform: scaleX(-1) rotate(135deg); transform-origin: left top;
+      //-moz-transform, -ms-transform, -webkit-transform:scaleX(-1) rotate(135deg);
+      //-moz-transform-origin, -ms-transform-origin, -webkit-transform-origin: left top;
     }
   }
   & input {
-    @include inputs;
+    display: none;
   }
-  & .btn {
-    @include inputs;
-    color: black;
-    margin: 0.9rem;
-    padding: 0.3rem 2rem;
-    font-size: 0.9rem;
-    text-transform: uppercase;
+  & input:checked + span:after {
+    //-webkit-animation, -moz-animation, -o-animation: check 1s;
+    animation: check 1s;
+    border-color: $text-light-mode;
   }
-  & .form-check {
-    display: flex;
-    align-items: center;
-    & .form-check-input {
-      margin-right: 0.5rem;
-    }
-  }
+}
+@keyframes check {
+  0% {height: 0; width: 0;} 25% {height: 0; width: 10px;} 50% {height: 20px; width: 10px;}
+}
+
+@mixin buttons {
+  @include inputs;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: $text-light-mode;
+  margin: 0.9rem; padding: 0.3rem 2rem;
 }
 
 %background-behaviour {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
   z-index: -1;
 }
 
 *,
 ::after,
 ::before {
-  margin: 0;
-  padding: 0;
+  margin: 0; padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: $font-primary;
-  width: 100vw;
-  height: 100vh;
+  font-family: $font-primary; font-size: 1rem;
+  width: 100vw; height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; align-items: center;
+  & a {
+    text-decoration: none;
+  }
 }
 
-.background{
+h1, h2, h3, h4, h5 {
+  text-align: center;
+}
+
+.background {
   @extend %background-behaviour;
   & div {
     @extend %background-behaviour;
     will-change: opacity;
   }
   .gradient-one{
-    background: linear-gradient(180deg, #fae2bc 60%, #9bdaff 100%);
+    background: linear-gradient(180deg, rgba(250, 226, 188, 1) 20%, rgba(155, 218, 255, 1) 100%);
   }
   .gradient-two{
-    background: linear-gradient(300deg, #f9c3f5 60%, #9bdaff 100%);
-    animation: fade-one 6s linear infinite;
+    background: linear-gradient(280deg, rgba(249, 195, 245, 1) 50%, rgba(155, 218, 255, 1) 100%);
+    animation: fade-one 5s linear infinite;
   }
   .gradient-three{
-    background: linear-gradient(10deg, #bab2fc 60%, #9bdaff 100%);
-    animation: fade-two 6s linear infinite;
+    background: linear-gradient(10deg, rgba(186, 178, 252, 1) 70%, rgba(155, 218, 255, 1) 100%);
+    animation: fade-two 5s linear infinite;
   }
 }
 @keyframes fade-one {
-  0% {
-    opacity: 1; }
-  33% {
-    opacity: 1; }
-  66% {
-    opacity: 0; }
-  100% {
-    opacity: 0; }
+  0% {opacity: 1;} 33% {opacity: 1;} 66% {opacity: 0;} 100% {opacity: 0;}
 }
 @keyframes fade-two {
-  0% {
-    opacity: 1; }
-  33% {
-    opacity: 0; }
-  66% {
-    opacity: 0; }
-  100% {
-    opacity: 1; }
+  0% {opacity: 1;} 33% {opacity: 0;} 66% {opacity: 0;} 100% {opacity: 1;}
 }
 
-#sign-in {
-  @include forms;
-}
-
-#sign-up {
-  @include forms;
-}
-
-.page {
-  display: none;
-  &.active {
-    display: block;
+main {
+  & #sign-in {
+    @include forms;
+  }
+  & #sign-up {
+    @include forms;
+  }
+  & .page {
+    display: none;
+    &.active {
+      display: block;
+    }
   }
 }
+
+form {
+  & a:hover {
+        color: $text-light-mode;
+      }
+  & .form-control {
+    @include inputs;
+  }
+  & .list-group {
+    margin-top: 0.6rem; margin-left: -0.5rem;
+    display: flex; flex-flow: row;
+    align-items: center;
+    & .checkbox {
+      @include checkboxes;
+    }
+  }
+  & .btn {
+    @include buttons;
+  }
+  }
+
+
+
