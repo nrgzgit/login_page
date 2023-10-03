@@ -39,6 +39,7 @@ $box-shadow-inset: inset 0 0 1.25rem rgb(255, 255, 255);
 @mixin checkboxes {
   @include inputs;
   width: 1.2rem; height: 1.2rem;
+  border-radius: 0.2rem;
   margin: 0 0.5rem;
   & span {
     position:relative;
